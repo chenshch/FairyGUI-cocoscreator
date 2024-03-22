@@ -2486,7 +2486,7 @@ function registerFont(name, font, bundle) {
     if (font instanceof Font)
         _fontRegistry[name] = font;
     else {
-        (bundle || resources).load(name, Font, (err, asset) => {
+        (bundle || resources).load(font, Font, (err, asset) => {
             _fontRegistry[name] = asset;
         });
     }

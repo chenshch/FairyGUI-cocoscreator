@@ -74,7 +74,7 @@ export function registerFont(name: string, font: Font | string, bundle?: AssetMa
     if (font instanceof Font)
         _fontRegistry[name] = font;
     else {
-        (bundle || resources).load(name, Font, (err: Error | null, asset: Font) => {
+        (bundle || resources).load(font, Font, (err: Error | null, asset: Font) => {
             _fontRegistry[name] = asset;
         });
     }
